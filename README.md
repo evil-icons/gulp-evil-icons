@@ -9,17 +9,12 @@ This plugin allows to use [Evil Icons] in your project with Gulp.
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
 </a></p>
 
-## Getting Started
-
-If you haven't used [Gulp](http://gulpjs.com) before, be sure to check out
-the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) guide.
-Once you're familiar with it, you may install this plugin with this command:
-
-
 ## Usage
 
 ### Overview
-You have to install the plugin first:
+If you haven't used [Gulp](http://gulpjs.com) before, be sure to check out
+the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) guide.
+Once you're familiar with it, you may install the plugin with this command:
 
 ```shell
 npm install gulp-evil-icons --save-dev
