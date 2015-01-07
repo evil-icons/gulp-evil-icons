@@ -1,0 +1,11 @@
+.git
+.DS_Store
+npm-debug.log
+*.sublime-project
+*.sublime-workspace
+*.todo
+
+Gulpfile.js
+node_modules
+test
+tmp
