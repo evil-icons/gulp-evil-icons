@@ -1,6 +1,6 @@
 {
   "name": "gulp-evil-icons",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gulp plugin to use Evil Icons in your project",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,10 @@
   },
   "homepage": "https://github.com/outpunk/gulp-evil-icons",
   "dependencies": {
-    "cheerio": "^0.18.0",
-    "evil-icons": "^1.4.0",
     "gulp-util": "^3.0.1",
     "through2": "^0.6.3"
+  },
+  "peerDependencies": {
+    "evil-icons": "^1.4.0"
   }
 }

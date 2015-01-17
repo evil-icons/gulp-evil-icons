@@ -10,30 +10,51 @@
 
 var through     = require('through2');
 var gutil       = require('gulp-util');
-var cheerio     = require("cheerio");
 var icons       = require("evil-icons");
 var PluginError = gutil.PluginError;
 
 
-function iconize(html) {
-  var $ = cheerio.load(html, {xmlMode: true});
+function buildParamsFromString(string) {
+  var paramsString;
+  var params = {};
+  var string = string.trim().replace(/['"]/gi, '');
 
-  $("body").prepend(icons.sprite);
+  string.split(' ').forEach(function(param){
+    var param = param.split('=');
+    var key   = param[0];
+    var value = param[1];
 
-  $("icon").each(function(i, el){
-    var icon      = $(el);
-    var name      = icon.attr("name");
-
-    var params    = {};
-    params.size   = icon.attr("size");
-    params.class  = icon.attr("class");
-
-    var html      = icons.icon(name, params);
-
-    $(this).replaceWith(html);
+    params[key] = value;
   });
 
-  return $.xml();
+  return params;
+}
+
+
+function replaceIconTags(src) {
+  var match, tag, params, icon, name;
+  var html = src.toString();
+  var iconRegexp  = /<icon\s+([-=\w\d'"\s]+)\s*\/?>(<\/icon>)?/gi;
+
+  while (match = iconRegexp.exec(html)) {
+    tag     = match[0];
+    params  = buildParamsFromString(match[1]);
+    name    = params.name;
+
+    delete params.name;
+
+    icon = icons.icon(name, params)
+    html = html.replace(tag, icon);
+  }
+
+  return html;
+}
+
+
+function iconize(src) {
+  var html  = src.toString();
+  html      = html.replace('<body>', '<body>' + icons.sprite);
+  return replaceIconTags(html);
 }
 
 
