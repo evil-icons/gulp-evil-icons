@@ -16,7 +16,7 @@ var PluginError = gutil.PluginError;
 
 
 function iconize(html) {
-  var $ = cheerio.load(html);
+  var $ = cheerio.load(html, {xmlMode: true});
 
   $("body").prepend(icons.sprite);
 
@@ -33,7 +33,7 @@ function iconize(html) {
     $(this).replaceWith(html);
   });
 
-  return $.html();
+  return $.xml();
 }
 
 
