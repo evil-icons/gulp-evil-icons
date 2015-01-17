@@ -53,7 +53,7 @@ function replaceIconTags(src) {
 
 function iconize(src) {
   var html  = src.toString();
-  html = html.replace(/<body.*>/, function(match) { return match + icons.sprite });
+  html = html.replace(/<body.*?>/, function(match) { return match + icons.sprite });
   return replaceIconTags(html);
 }
 
