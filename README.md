@@ -48,7 +48,7 @@ be replaced with actual SVG code.
 
 The only thing you have to add to your code explicitly is the stylesheet:
 ```html
-<link rel="stylesheet" href="../node_modules/evil-icons/assets/css/evil-icons.css">
+<link rel="stylesheet" href="./node_modules/gulp-evil-icons/node_modules/evil-icons/assets/evil-icons.css">
 ```
 
 
