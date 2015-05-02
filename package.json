@@ -1,6 +1,6 @@
 {
   "name": "gulp-evil-icons",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Gulp plugin to use Evil Icons in your project",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   "dependencies": {
     "gulp-util": "^3.0.1",
     "through2": "^0.6.3",
-    "evil-icons": "^1.7.4"
+    "evil-icons": "^1.7.6"
   }
 }
