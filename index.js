@@ -9,9 +9,8 @@
 "use strict";
 
 var through     = require('through2');
-var gutil       = require('gulp-util');
+var PluginError = require('plugin-error');
 var icons       = require("evil-icons");
-var PluginError = gutil.PluginError;
 
 
 function gulpEvilIcons() {
